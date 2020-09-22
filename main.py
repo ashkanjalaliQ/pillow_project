@@ -8,14 +8,14 @@ from colorama import Fore
 user_exit = False
 state = "main_menu"
 changes = []
-#u = input()
+
 u = open('back_slash.txt')
 u = u.readline()
-#print(u)
+
 py_file_path = os.path.abspath(__file__)
-#print(py_file_path)
+
 py_file_path = functions.folder_without_file_name(py_file_path, u)
-#print(py_file_path)
+
 while not user_exit:
     if state in settings.MENUS_VALID_STATES:
         if state == "main_menu":
