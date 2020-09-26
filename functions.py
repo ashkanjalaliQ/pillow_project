@@ -3,6 +3,8 @@ from effects import color_effect
 from PIL import Image
 from colorama import Fore
 from tkinter import filedialog
+from pardazesh import recommender
+
 
 def folder_without_file_name(address, split_by):
     address = address.split(split_by)[:-1]
@@ -14,23 +16,29 @@ def folder_without_file_name(address, split_by):
 def main_menu():
     return settings.MAIN_MENU
 
-def insert_menu(py_file_path):
+def insert_menu(py_file_path, image_address):
     print(Fore.WHITE, settings.INSERT)
 
-    image_address = search()
-
-    if len(image_address) != 2 and image_address == 'main_menu':
+    #image_address = search()
+    #print(image_address)
+    #if len(image_address) != 2 and image_address == 'main_menu':
+        #status = 'main_menu'
+        #return status
+    if len(image_address) != 2:
+        #print(1)
         status = 'main_menu'
         return status
-    else:
-        pos = image_address[0]
-        image_address = image_address[1]
+    #else:
+    pos = image_address[0]
+    image_address = image_address[1]
+        #print(pos, image_address)
     #if status != 'main_menu':
     try:
         image = Image.open(image_address)
+        #print(1)
     except:
         print(Fore.RED, settings.ERROR[1])
-        insert_menu(py_file_path)
+        insert_menu(py_file_path, image_address)
 
     #print(folder_without_file_name(image_address))
     image_address = folder_without_file_name(image_address, '//')
@@ -46,44 +54,45 @@ def insert_menu(py_file_path):
     except:
         return 'back'
 
-def export_menu(image, pos, image_address):
+def export_menu(image, pos, image_address, file_name):
     print(settings.EXPORT)
-    file_name = input()
+    #file_name = input()
     if file_name == 'back':
         status = 'main_menu'
         return status
-    print(image_address)
+    print(folder_without_file_name(image_address, '//'))
+    image_address = folder_without_file_name(image_address, '//')
     if pos == '-nr':
-        image_address += file_name + '.jpg'
+        image_address += '//' + file_name + '.jpg'
     else:
-        image_address = file_name + '.jpg'
+        image_address = + '//' + file_name + '.jpg'
     print(image_address)
     image.save(image_address)
     print(Fore.GREEN, settings.SUCCESS)
 
-def edit_menu(image):
+def edit_menu(image, options):
     print(Fore.WHITE, settings.EDIT)
-    n = input()
-    if n == 'back':
-        status = 'main_menu'
-        return status
-    #if status != 'main_menu':
-    try:
-        n = int(n)
-    except:
-        print(Fore.RED, settings.ERROR[0])
-    if n == 1:
-        image = color_effect.gray_scale(image)
-    elif n == 2:
-        image = color_effect.b_and_w(image)
-    else:
-        image = color_effect.negative(image)
-    return [image, n]
+    #n = input()
+    switch = [
+        'grayscale',
+        'negative',
+        'blackandwhite'
+    ]
+    changes = []
+    for option in options:
+        if recommender(option, switch) == 'grayscale':
+            image = color_effect.gray_scale(image)
+        if recommender(option, switch) == 'blackandwhite':
+            image = color_effect.b_and_w(image)
+        else:
+            image = color_effect.negative(image)
+        changes.append(recommender(option, switch))
+    return [image, changes]
 
 def state_error():
     print(Fore.RED, settings.ERROR)
 
-def search():
+def search(address):
     print(Fore.WHITE, settings.SEARCH)
     n = input()
     pos = ''
@@ -112,12 +121,12 @@ def search():
     elif n == 2:
         #address = input().split()
         print(settings.INSERT)
-        address = input()
+        #address = input()
         if address == 'back':
             status = 'main_menu'
             return status
         address = address.split()
-        print(address)
+        #print(address)
         pos = address[0]
         address = address[-1]
     return [pos, address]

@@ -1,5 +1,6 @@
 import settings
 import functions
+import pardazesh
 import sys
 import os
 from colorama import Fore
@@ -16,6 +17,11 @@ py_file_path = os.path.abspath(__file__)
 
 py_file_path = functions.folder_without_file_name(py_file_path, u)
 
+entry = pardazesh.Processing_sentence(input('Please Enter Command').replace('"', ''))
+#print(entry)
+#print(entry[:2])
+state = 'insert'
+print(entry[:2])
 while not user_exit:
     if state in settings.MENUS_VALID_STATES:
         if state == "main_menu":
@@ -28,12 +34,9 @@ while not user_exit:
                 state = 'main_menu'
         elif state == "insert":
 
-            tempo = functions.insert_menu(py_file_path)
+            tempo = functions.insert_menu(py_file_path, entry[0:2])
             if len(tempo) == 1:
                 state = 'main_menu'
-                #del image
-                #del image_address
-                #del pos
             else:
                 #image, image_address, state, pos = tempo
                 image = tempo[0]
@@ -41,19 +44,22 @@ while not user_exit:
                 pos = tempo[2]
                 #print(pos)
                 print(Fore.GREEN, settings.SUCCESS)
-            state = 'main_menu'
+            if entry[2] == 'edit':
+                state = 'edit'
+            #state = 'main_menu'
         elif state == "export":
             try:
-                functions.export_menu(image, pos, image_address)
+                functions.export_menu(image, entry[0], entry[1], entry[-1])
             except:
                 print(Fore.RED, settings.ERROR[2])
             state = 'main_menu'
         elif state == "edit":
             try:
-                state = functions.edit_menu(image)
+                state = functions.edit_menu(image, entry[3:-1])
                 if len(state) == 2:
                     image = state[0]
-                    changes.append(settings.CHANGES[state[1] - 1])
+                    #changes.append(settings.CHANGES[state[1] - 1])
+                    changes = state[1]
                 #if state != 'main_menu':
                     #image = state
                 state = 'main_menu'
@@ -61,6 +67,7 @@ while not user_exit:
             except:
                 print(Fore.RED, settings.ERROR[2])
                 state = 'main_menu'
+            state = 'export'
         elif state == 'preview':
             try:
                 image.show()
