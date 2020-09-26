@@ -17,6 +17,11 @@
 ```
 python main.py
 ```
+### اجرای برنامه با یک دستور
+```
+>>> Please Enter Command
+"[-nr, -r] + image address" edit [effects+] "export name"
+```
 
 ## لیست کار ها
 - [x] ساخت سه افکت کاربردی
