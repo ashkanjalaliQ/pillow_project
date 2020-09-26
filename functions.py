@@ -17,7 +17,7 @@ def main_menu():
     return settings.MAIN_MENU
 
 def insert_menu(py_file_path, image_address):
-    print(Fore.WHITE, settings.INSERT)
+    #print(Fore.WHITE, settings.INSERT)
 
     #image_address = search()
     #print(image_address)
@@ -56,7 +56,7 @@ def insert_menu(py_file_path, image_address):
 
 def export_menu(image, pos, image_address, file_name):
 
-    print(settings.EXPORT)
+    #print(settings.EXPORT)
     #file_name = input()
     if file_name == 'back':
         status = 'main_menu'
@@ -96,7 +96,7 @@ def state_error():
     print(Fore.RED, settings.ERROR)
 
 def search(address):
-    print(Fore.WHITE, settings.SEARCH)
+    #print(Fore.WHITE, settings.SEARCH)
     n = input()
     pos = ''
     if n == 'back':
@@ -123,7 +123,7 @@ def search(address):
         #pos = settings.FILE_MODE[int(input('1. -nr\n2.-r\n')) - 1]
     elif n == 2:
         #address = input().split()
-        print(settings.INSERT)
+        #print(settings.INSERT)
         #address = input()
         if address == 'back':
             status = 'main_menu'
