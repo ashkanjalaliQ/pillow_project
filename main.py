@@ -21,7 +21,7 @@ entry = pardazesh.Processing_sentence(input('Please Enter Command').replace('"',
 #print(entry)
 #print(entry[:2])
 state = 'insert'
-print(entry[:2])
+#print(entry[:2])
 while not user_exit:
     if state in settings.MENUS_VALID_STATES:
         if state == "main_menu":
@@ -43,12 +43,13 @@ while not user_exit:
                 image_address = tempo[1]
                 pos = tempo[2]
                 #print(pos)
-                print(Fore.GREEN, settings.SUCCESS)
+                #print(Fore.GREEN, settings.SUCCESS)
             if entry[2] == 'edit':
                 state = 'edit'
             #state = 'main_menu'
         elif state == "export":
             try:
+                #print(entry[0], entry[1], entry[-1])
                 functions.export_menu(image, entry[0], entry[1], entry[-1])
             except:
                 print(Fore.RED, settings.ERROR[2])
@@ -63,7 +64,7 @@ while not user_exit:
                 #if state != 'main_menu':
                     #image = state
                 state = 'main_menu'
-                print(Fore.GREEN, settings.SUCCESS)
+                #print(Fore.GREEN, settings.SUCCESS)
             except:
                 print(Fore.RED, settings.ERROR[2])
                 state = 'main_menu'

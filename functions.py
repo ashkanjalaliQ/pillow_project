@@ -55,23 +55,26 @@ def insert_menu(py_file_path, image_address):
         return 'back'
 
 def export_menu(image, pos, image_address, file_name):
+
     print(settings.EXPORT)
     #file_name = input()
     if file_name == 'back':
         status = 'main_menu'
         return status
-    print(folder_without_file_name(image_address, '//'))
-    image_address = folder_without_file_name(image_address, '//')
+    if pos == '-nr':
+        #print(folder_without_file_name(image_address, '//'))
+        image_address = folder_without_file_name(image_address, '//')
+
     if pos == '-nr':
         image_address += '//' + file_name + '.jpg'
     else:
-        image_address = + '//' + file_name + '.jpg'
-    print(image_address)
+        image_address = file_name + '.jpg'
+    #print(image_address)
     image.save(image_address)
-    print(Fore.GREEN, settings.SUCCESS)
+    #print(Fore.GREEN, settings.SUCCESS)
 
 def edit_menu(image, options):
-    print(Fore.WHITE, settings.EDIT)
+    #print(Fore.WHITE, settings.EDIT)
     #n = input()
     switch = [
         'grayscale',
