@@ -31,12 +31,10 @@ def insert_menu(py_file_path, image_address):
     #else:
     pos = image_address[0]
     image_address = image_address[1]
-    print(image_address)
         #print(pos, image_address)
     #if status != 'main_menu':
     #try:
     image = Image.open(image_address)
-    print(7)
         #print(1)
     #except:
         #print(4)

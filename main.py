@@ -28,16 +28,13 @@ while user_exit:
             #print(2)
             user_exit = False
     else:
-        print(1)
         if '/' in (entry.split()[1]).split('.')[0] or ('_' in (entry.split()[1]).split('.')[0] or '-' in (entry.split()[1]).split('.')[0] or '(' in (entry.split()[1]).split('.')[0] or ')' in (entry.split()[1]).split('.')[0]):
-            print(2)
             if len(re.findall('-nr [^,;]+.(png|jpg|jpeg|gif) edit (grayscale|negative|blackandwhite)* [a-z]*', entry)) != 0:
                 user_exit = False
 
 
 entry = pardazesh.Processing_sentence(entry)
 
-print(entry)
 state = 'insert'
 
 while not user_exit:
@@ -54,7 +51,6 @@ while not user_exit:
                 image = tempo[0]
                 image_address = tempo[1]
                 pos = tempo[2]
-                print(3)
                 #print(pos)
                 #print(Fore.GREEN, settings.SUCCESS)
             if entry[2] == 'edit':
