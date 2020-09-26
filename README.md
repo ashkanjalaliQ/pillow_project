@@ -1,5 +1,5 @@
 # پروژه پیلو
-![N|Solid](https://repository-images.githubusercontent.com/5171600/28cb0300-7e53-11ea-86e8-ba321370c31a)
+![N|Solid](https://github.com/ashkanjalaliQ/pillow_project/blob/master/image/pillow.png?raw=true)
 این پروژه اپن سورس برای کار با عکس ها هست. با استفاده از این برنامه میتونید روی عکس هایتان انواع افکت هارو اعمال کنید
 ## لیست تغییرات
 ### 99/6/30
