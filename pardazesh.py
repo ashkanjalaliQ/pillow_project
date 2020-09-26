@@ -21,5 +21,8 @@ def recommender(word, options):
     return options[find_max(p)]
 
 
+#def Check_command(command):
+    #image_address =
+
 #print(recommender('negabla', ['grayscale', 'negative', 'blackandwhite']))
 #print(find_max([1.0, 1.625, 0.46153846153846156]))

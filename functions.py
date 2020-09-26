@@ -31,14 +31,18 @@ def insert_menu(py_file_path, image_address):
     #else:
     pos = image_address[0]
     image_address = image_address[1]
+    print(image_address)
         #print(pos, image_address)
     #if status != 'main_menu':
-    try:
-        image = Image.open(image_address)
+    #try:
+    image = Image.open(image_address)
+    print(7)
         #print(1)
-    except:
-        print(Fore.RED, settings.ERROR[1])
-        insert_menu(py_file_path, image_address)
+    #except:
+        #print(4)
+        #print(Fore.RED, settings.ERROR[1])
+        #print(5)
+        #insert_menu(py_file_path, image_address)
 
     #print(folder_without_file_name(image_address))
     image_address = folder_without_file_name(image_address, '//')

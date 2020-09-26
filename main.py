@@ -2,11 +2,12 @@ import settings
 import functions
 import pardazesh
 import sys
+import re
 import os
 from colorama import Fore
 
 
-user_exit = False
+user_exit = True
 state = "main_menu"
 changes = []
 
@@ -17,23 +18,34 @@ py_file_path = os.path.abspath(__file__)
 
 py_file_path = functions.folder_without_file_name(py_file_path, u)
 
-entry = pardazesh.Processing_sentence(input('Please Enter Command').replace('"', ''))
-#print(entry)
-#print(entry[:2])
+#l = pardazesh.Processing_sentence(input('Please Enter Command').replace('"', ''))
+#print(l)
+while user_exit:
+    entry = input('Please Enter Command').replace('"', '')
+    if '-r' in entry:
+        #print(1)
+        if len(re.findall('(-r|-nr) [A-Z:a-z_]*.(png|jpg|jpeg|gif) edit (grayscale|negative|blackandwhite)* [a-z]*', entry)) != 0:
+            #print(2)
+            user_exit = False
+    else:
+        print(1)
+        if '/' in (entry.split()[1]).split('.')[0] or ('_' in (entry.split()[1]).split('.')[0] or '-' in (entry.split()[1]).split('.')[0] or '(' in (entry.split()[1]).split('.')[0] or ')' in (entry.split()[1]).split('.')[0]):
+            print(2)
+            if len(re.findall('-nr [^,;]+.(png|jpg|jpeg|gif) edit (grayscale|negative|blackandwhite)* [a-z]*', entry)) != 0:
+                user_exit = False
+
+
+entry = pardazesh.Processing_sentence(entry)
+
+print(entry)
 state = 'insert'
-#print(entry[:2])
+
 while not user_exit:
     if state in settings.MENUS_VALID_STATES:
         if state == "main_menu":
-            print(Fore.WHITE, functions.main_menu())
-            try:
-                state = settings.MENUS_VALID_STATES[int(input())]
-                #print(state)
-            except:
-                print(Fore.RED, settings.ERROR[0])
-                state = 'main_menu'
+            pass
+            #print(Fore.WHITE, functions.main_menu())
         elif state == "insert":
-
             tempo = functions.insert_menu(py_file_path, entry[0:2])
             if len(tempo) == 1:
                 state = 'main_menu'
@@ -42,29 +54,26 @@ while not user_exit:
                 image = tempo[0]
                 image_address = tempo[1]
                 pos = tempo[2]
+                print(3)
                 #print(pos)
                 #print(Fore.GREEN, settings.SUCCESS)
             if entry[2] == 'edit':
                 state = 'edit'
-            #state = 'main_menu'
         elif state == "export":
             try:
                 #print(entry[0], entry[1], entry[-1])
                 functions.export_menu(image, entry[0], entry[1], entry[-1])
             except:
                 print(Fore.RED, settings.ERROR[2])
-            state = 'main_menu'
+            #state = 'chert'
+            user_exit = True
         elif state == "edit":
             try:
                 state = functions.edit_menu(image, entry[3:-1])
                 if len(state) == 2:
                     image = state[0]
-                    #changes.append(settings.CHANGES[state[1] - 1])
                     changes = state[1]
-                #if state != 'main_menu':
-                    #image = state
                 state = 'main_menu'
-                #print(Fore.GREEN, settings.SUCCESS)
             except:
                 print(Fore.RED, settings.ERROR[2])
                 state = 'main_menu'
@@ -87,3 +96,4 @@ while not user_exit:
         functions.state_error()
     #print(changes)
 
+print('Tamam')
