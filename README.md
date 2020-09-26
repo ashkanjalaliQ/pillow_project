@@ -20,7 +20,7 @@ python main.py
 ### اجرای برنامه با یک دستور
 ```
 >>> Please Enter Command
-"[-nr, -r] + image address" edit [effects+] "export name"
+"[-nr/-r] + {image address}" edit [grayscale/negative/blackandwhite] "{export name}"
 ```
 
 ## لیست کار ها
@@ -28,3 +28,4 @@ python main.py
 - [x] قابلیت دیدن پیشنمایش عکس قبل از ذخیره
 - [x] نشان دادن تغییراتی که روی عکس اعمال کرده اید
 - [x] اجرای برنامه فقط با یک خط دستور
+- [x] قابلیت تشخیص کلمه اشتباه نظیر نام افکت و تصحیح آن
