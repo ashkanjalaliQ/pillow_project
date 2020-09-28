@@ -18,7 +18,7 @@
 python main.py
 ```
 ### اجرای برنامه با یک دستور
-```python
+```
 >>> Please Enter Command
 "[-nr/-r] + {image address}" edit [grayscale/negative/blackandwhite] "{export name}"
 ```
