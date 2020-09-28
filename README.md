@@ -34,7 +34,7 @@ def negative(image):
     image = image.convert('RGB')
     return image
 ```
-### Black adn White
+### Black and White
 ```python
 def b_and_w(image):
     gray = image.convert('L')
