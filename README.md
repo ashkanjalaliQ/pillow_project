@@ -26,6 +26,21 @@ python main.py
 "[-nr/-r] + {image address}" edit [grayscale/negative/blackandwhite] "{export name}"
 ```
 
+### قابلیت تشخیص کلمه اشتباه
+این قابلیت به شما کمک میکند که اگر نام افکتی را غلط نوشتید، برنامه نزدیک ترین کلمه به کلمه اشتباه شما را پیدا کند و جای آن بگذارد.
+
+#### مثال
+```
+>>> Please Enter Command
+"-r photo.png" edit grayscfel negitave balkandwite "Salam_aziz"
+```
+شکل تصحیح شده:
+```
+"-r photo.png" edit grayscale negative blackandwhite "Salam_aziz"
+```
+> در این صورت برنامه دستور شما به صورت شکل بالا تصحیح میکند
+
+
 ## لیست کار ها
 - [x] ساخت سه افکت کاربردی
 - [x] قابلیت دیدن پیشنمایش عکس قبل از ذخیره
