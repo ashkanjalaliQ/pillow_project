@@ -15,6 +15,33 @@
 یعنی فقط با یک خط میتونید همه درخواست هایتان نظیر بازکردن عکس، ویرایش عکس و سیو کردن عکس را انجام دهید.
 قسمت جذاب برنامه اینجاست که اگر کلماتی مثل اسم افکت هارو اشتباه بنویسید، برنامه نزدیک ترین کلمه به اون کلمه اشتباه رو پیدا میکنه و جای اون میذاره
 
+## تابع های اعمال فیلتر
+در ابتدا باید کتابخانه پیلو را فراخوانی کنید:
+```
+from PIL import ImageOps, ImageChops
+```
+### Grayscale
+```python
+def gray_scale(image):
+    image = ImageOps.grayscale(image)
+    image = image.convert('RGB')
+    return image
+```
+### Negative
+```python
+def negative(image):
+    image = ImageChops.invert(image)
+    image = image.convert('RGB')
+    return image
+```
+### Black adn White
+```python
+def b_and_w(image):
+    gray = image.convert('L')
+    image = gray.point(lambda x: 0 if x < 128 else 255, '1')
+    image = image.convert('RGB')
+    return image
+```
 
 ## طریقه استفاده⚡
 ```python
