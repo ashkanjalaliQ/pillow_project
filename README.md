@@ -17,7 +17,7 @@
 
 ## تابع های اعمال فیلتر
 در ابتدا باید کتابخانه پیلو را فراخوانی کنید:
-```
+```python
 from PIL import ImageOps, ImageChops
 ```
 ### Grayscale
