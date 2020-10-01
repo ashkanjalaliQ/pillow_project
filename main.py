@@ -6,9 +6,6 @@ import re
 import os
 from colorama import Fore
 
-
-user_exit = True
-state = "main_menu"
 changes = []
 
 u = open('back_slash.txt')
@@ -18,22 +15,8 @@ py_file_path = os.path.abspath(__file__)
 
 py_file_path = functions.folder_without_file_name(py_file_path, u)
 
-#l = pardazesh.Processing_sentence(input('Please Enter Command').replace('"', ''))
-#print(l)
-while user_exit:
-    entry = input('Please Enter Command').replace('"', '')
-    if '-r' in entry:
-        #print(1)
-        if len(re.findall('(-r|-nr) [A-Z:a-z_]*.(png|jpg|jpeg|gif) edit (grayscale|negative|blackandwhite)* [a-z]*', entry)) != 0:
-            #print(2)
-            user_exit = False
-    else:
-        if '/' in (entry.split()[1]).split('.')[0] or ('_' in (entry.split()[1]).split('.')[0] or '-' in (entry.split()[1]).split('.')[0] or '(' in (entry.split()[1]).split('.')[0] or ')' in (entry.split()[1]).split('.')[0]):
-            if len(re.findall('-nr [^,;]+.(png|jpg|jpeg|gif) edit (grayscale|negative|blackandwhite)* [a-z]*', entry)) != 0:
-                user_exit = False
 
-
-entry = pardazesh.Processing_sentence(entry)
+user_exit, entry = pardazesh.check_command()
 
 state = 'insert'
 
@@ -41,18 +24,14 @@ while not user_exit:
     if state in settings.MENUS_VALID_STATES:
         if state == "main_menu":
             pass
-            #print(Fore.WHITE, functions.main_menu())
         elif state == "insert":
             tempo = functions.insert_menu(py_file_path, entry[0:2])
             if len(tempo) == 1:
                 state = 'main_menu'
             else:
-                #image, image_address, state, pos = tempo
                 image = tempo[0]
                 image_address = tempo[1]
                 pos = tempo[2]
-                #print(pos)
-                #print(Fore.GREEN, settings.SUCCESS)
             if entry[2] == 'edit':
                 state = 'edit'
         elif state == "export":

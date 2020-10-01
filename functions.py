@@ -81,17 +81,42 @@ def edit_menu(image, options):
     switch = [
         'grayscale',
         'negative',
-        'blackandwhite'
+        'blackandwhite',
+        'contour',
+        'edgeenhance',
+        'emboss',
+        'findedges',
+        'blur',
+        'smooth'
+    ]
+
+    effects = [
+        color_effect.gray_scale,
+        color_effect.negative,
+        color_effect.b_and_w,
+        color_effect.contourfilter,
+        color_effect.edgeenhance,
+        color_effect.emboss,
+        color_effect.findedges,
+        color_effect.blur,
+        color_effect.smooth
     ]
     changes = []
-    for option in options:
+    '''for option in options:
         if recommender(option, switch) == 'grayscale':
             image = color_effect.gray_scale(image)
         if recommender(option, switch) == 'blackandwhite':
             image = color_effect.b_and_w(image)
         else:
             image = color_effect.negative(image)
-        changes.append(recommender(option, switch))
+        changes.append(recommender(option, switch))'''
+    for option in options:
+        #for i in range(len(switch)):
+        #if recommender(option, switch) == switch[i]:
+        t = switch.index(recommender(option, switch))
+        image = effects[t](image)
+        effect_name = switch[t]
+        changes.append(effect_name)
     return [image, changes]
 
 def state_error():
