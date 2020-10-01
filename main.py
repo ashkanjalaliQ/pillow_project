@@ -36,11 +36,9 @@ while not user_exit:
                 state = 'edit'
         elif state == "export":
             try:
-                #print(entry[0], entry[1], entry[-1])
                 functions.export_menu(image, entry[0], entry[1], entry[-1])
             except:
                 print(Fore.RED, settings.ERROR[2])
-            #state = 'chert'
             user_exit = True
         elif state == "edit":
             try:
@@ -69,6 +67,5 @@ while not user_exit:
             sys.exit()
     else:
         functions.state_error()
-    #print(changes)
 
 print('Tamam')

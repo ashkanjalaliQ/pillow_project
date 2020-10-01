@@ -15,9 +15,7 @@ def check_command():
     while user_exit:
         entry = input('Please Enter Command').replace('"', '')
         if '-r' in entry:
-            # print(1)
             if len(re.findall('(-r|-nr) [A-Z:a-z_]*.(png|jpg|jpeg|gif) edit (grayscale|negative|blackandwhite|contour|edgeenhance|emboss|findedges|blur|smooth)* [a-z]*', entry)) != 0:
-                # print(2)
                 user_exit = False
         else:
             if '/' in (entry.split()[1]).split('.')[0] or (
@@ -38,10 +36,3 @@ def recommender(word, options):
         p.append(t / len(option))
 
     return options[find_max(p)]
-
-
-#def Check_command(command):
-    #image_address =
-
-#print(recommender('negabla', ['grayscale', 'negative', 'blackandwhite']))
-#print(find_max([1.0, 1.625, 0.46153846153846156]))

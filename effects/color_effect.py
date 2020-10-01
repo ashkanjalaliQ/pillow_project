@@ -18,18 +18,18 @@ def negative(image):
 
 
 def contourfilter(image):
-    return image.filter(ImageFilter.CONTOUR)
+    return image.filter(ImageFilter.CONTOUR).convert('RGB')
 
 def edgeenhance(image):
-    return image.filter(ImageFilter.EDGE_ENHANCE_MORE)
+    return image.filter(ImageFilter.EDGE_ENHANCE_MORE).convert('RGB')
 
 
 def emboss(image):
-    return image.filter(ImageFilter.EMBOSS)
+    return image.filter(ImageFilter.EMBOSS).convert('RGB')
 
 
 def findedges(image):
-    return image.filter(ImageFilter.FIND_EDGES)
+    return image.filter(ImageFilter.FIND_EDGES).convert('RGB')
 
 
 def blur(image):
@@ -38,7 +38,7 @@ def blur(image):
 
 
 def smooth(image):
-    return image.filter(ImageFilter.SMOOTH_MORE)
+    return image.filter(ImageFilter.SMOOTH_MORE).convert('RGB')
 
 #import pytesseract
 
