@@ -1,4 +1,5 @@
 import re
+import settings
 
 def Processing_sentence(sentence):
     return sentence.split()
@@ -17,12 +18,16 @@ def check_command():
         if '-r' in entry:
             if len(re.findall('(-r|-nr) [A-Z:a-z_]*.(png|jpg|jpeg|gif) edit (grayscale|negative|blackandwhite|contour|edgeenhance|emboss|findedges|blur|smooth)* [a-z]*', entry)) != 0:
                 user_exit = False
-        else:
+        elif '-nr' in entry:
             if '/' in (entry.split()[1]).split('.')[0] or (
                     '_' in (entry.split()[1]).split('.')[0] or '-' in (entry.split()[1]).split('.')[0] or '(' in (entry.split()[1]).split('.')[0] or ')' in (entry.split()[1]).split('.')[0]):
                 if len(re.findall('-nr [^,;]+.(png|jpg|jpeg|gif) edit (grayscale|negative|blackandwhite|contour|edgeenhance|emboss|findedges|blur|smooth)* [a-z]*',
                                   entry)) != 0:
                     user_exit = False
+        else:
+            if entry == '--help':
+                print(settings.HELP)
+
     return user_exit, Processing_sentence(entry)
 
 def recommender(word, options):

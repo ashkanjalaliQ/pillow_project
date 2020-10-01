@@ -58,3 +58,35 @@ FILE_MODE = [
     '-nr',
     '-r'
 ]
+
+HELP = """
+Hello!
+Welcome to the help page
+When you come here, it means you have a question.
+So solve your question using the guide below.
+Or to participate in our project, visit our project on github: https://github.com/ashkanjalaliQ/pillow_project
+
+@How to run the program?
+>>> python main.py
+
+@How to work?
+>>> Please Enter Command
+"[-nr/-r] + {image address}" edit {effect name} "{export name}"
+
+Example:
+"-r photo.png" edit grayscale negative blackandwhite "Salam_aziz"
+
+@How many effects does our program support?
+Our program supports 9 effects. This number will increase every day.
+
+@Name effects:
+    grayscale
+    negative
+    blackandwhite
+    contour
+    edgeenhance
+    emboss
+    findedges
+    blur
+    smooth
+"""
