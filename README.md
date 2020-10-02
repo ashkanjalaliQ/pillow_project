@@ -50,7 +50,7 @@ def negative(image):
     image = image.convert('RGB')
     return image
 </pre>
-<h3 dir="rtl">Black and White<h3>
+<h3 dir="rtl">Black and White</h3>
 <pre lang="python">
 def b_and_w(image):
     gray = image.convert('L')
