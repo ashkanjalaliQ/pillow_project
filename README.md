@@ -59,6 +59,37 @@ def b_and_w(image):
     return image
 </pre>
 
+<h3 dir="rtl">Contour</h3>
+<pre lang="python">
+def contourfilter(image):
+    return image.filter(ImageFilter.CONTOUR).convert('RGB')
+</pre>
+
+<h3 dir="rtl">Edgeenhance</h3>
+<pre lang="python">
+def edgeenhance(image):
+    return image.filter(ImageFilter.EDGE_ENHANCE_MORE).convert('RGB')
+</pre>
+
+<h3 dir="rtl">Emboss</h3>
+<pre lang="python">
+def emboss(image):
+    return image.filter(ImageFilter.EMBOSS).convert('RGB')
+</pre>
+
+<h3 dir="rtl">Findedges</h3>
+<pre lang="python">
+def findedges(image):
+    return image.filter(ImageFilter.FIND_EDGES).convert('RGB')
+</pre>
+
+<h3 dir="rtl">Blur</h3>
+<pre lang="python">
+def blur(image):
+    many = 5
+    return image.filter(ImageFilter.GaussianBlur(many)).convert('RGB')
+</pre>
+
 <h2 dir="rtl">طریقه استفاده⚡</h2>
 <pre lang="python">
 python main.py
