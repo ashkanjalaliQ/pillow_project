@@ -2,6 +2,7 @@ import settings
 import functions
 import pardazesh
 import sys
+import pytesseract
 import re
 import os
 from colorama import Fore
@@ -34,11 +35,19 @@ while not user_exit:
                 pos = tempo[2]
             if entry[2] == 'edit':
                 state = 'edit'
+            elif entry[2] == 'tool':
+                state = 'tool'
         elif state == "export":
-            try:
-                functions.export_menu(image, entry[0], entry[1], entry[-1])
-            except:
-                print(Fore.RED, settings.ERROR[2])
+            if 'tool' in entry:
+                try:
+                    functions.export_menu('.', entry[0], entry[1], entry[-1], response)
+                except:
+                    print(Fore.RED, settings.ERROR[4])
+            else:
+                try:
+                    functions.export_menu(image, entry[0], entry[1], entry[-1])
+                except:
+                    print(Fore.RED, settings.ERROR[2])
             user_exit = True
         elif state == "edit":
             try:
@@ -51,21 +60,18 @@ while not user_exit:
                 print(Fore.RED, settings.ERROR[2])
                 state = 'main_menu'
             state = 'export'
-        elif state == 'preview':
-            try:
-                image.show()
-            except:
-                print(Fore.RED, settings.ERROR[2])
-            state = 'main_menu'
-        elif state == 'show_changes':
-            if len(changes) != 0:
-                functions.show_changes(changes)
-            else:
-                print(Fore.RED, settings.ERROR[3])
-            state = 'main_menu'
+
+        elif state == "tool":
+            pytesseract.pytesseract.tesseract_cmd = r'C:\Users\lenovo\AppData\Local\Tesseract-OCR\tesseract'
+
+            response = pytesseract.image_to_string(entry[1], lang=entry[4]).strip()
+            '''file = open(entry[-1] + '.txt', 'w')
+            file.write(response)
+            file.close()'''
+            state = 'export'
         else:
             sys.exit()
-    else:
-        functions.state_error()
+    #else:
+        #functions.state_error()
 
-print('Tamam')
+print(Fore.WHITE, 'Tamam')

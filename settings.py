@@ -3,6 +3,7 @@ MENUS_VALID_STATES = [
     "main_menu",
     "insert",
     "export",
+    "tool",
     "edit",
     "preview",
     "show_changes",
@@ -35,7 +36,8 @@ ERROR = [
     "Error: Invalid Input, try agian...",
     "Error: there is no pic",
     "Error: Please Insert a image",
-    "The photo has not been changed."
+    "The photo has not been changed.",
+    "Error: The selected language is incorrect"
 ]
 
 SUCCESS = """

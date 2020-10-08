@@ -36,7 +36,7 @@ def insert_menu(py_file_path, image_address):
     except:
         return 'back'
 
-def export_menu(image, pos, image_address, file_name):
+def export_menu(image, pos, image_address, file_name, response):
 
     if file_name == 'back':
         status = 'main_menu'
@@ -45,11 +45,23 @@ def export_menu(image, pos, image_address, file_name):
         image_address = folder_without_file_name(image_address, '//')
 
     if pos == '-nr':
-        image_address += '//' + file_name + '.jpg'
+        image_address += '//' + file_name
     else:
-        image_address = file_name + '.jpg'
+        image_address = file_name
 
-    image.save(image_address)
+
+    if image != '.':
+        image_address += '.jpg'
+        image.save(image_address)
+
+    else:
+        image_address += '.txt'
+        '''file = open(image_address, 'w')
+        file.write(response)
+        file.close()'''
+
+        with open(image_address, 'w') as text_file:
+            text_file.write(response)
 
 
 def edit_menu(image, options):
@@ -88,11 +100,3 @@ def edit_menu(image, options):
 
 def state_error():
     print(Fore.RED, settings.ERROR)
-
-
-def show_changes(changes):
-    print(len(changes), 'Change:')
-    t = 1
-    for change in changes:
-        print(str(t) + ': ' + change)
-        t += 1
