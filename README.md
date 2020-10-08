@@ -63,11 +63,29 @@ def b_and_w(image):
 <pre lang="python">
 python main.py
 </pre>
-<h3 dir="rtl">اجرای برنامه با یک دستور</h3>
+<h3 dir="rtl">اجرای برنامه افکت با یک دستور</h3>
 <pre lang="python">
 >>> Please Enter Command
-"[-nr/-r] + {image address}" edit [grayscale/negative/blackandwhite] "{export name}"
+[-nr/-r] "{image address}" edit [grayscale/negative/blackandwhite] "{export name}"
 </pre>
+
+<h3 dir="rtl">اجرای برنامه تشخیص متن با یک دستور</h3>
+<pre lang="python">
+>>> Please Enter Command
+[-nr/-r] "{image address}" tool image_to_text [fas/eng] "{export name}"
+</pre>
+
+<h4 dir="rtl">مثال</h4>
+<p align="center">
+  <img src="https://github.com/ashkanjalaliQ/pillow_project/blob/master/image/hello.png?raw=true"/>
+</p>
+<pre lang="python">
+>>> Please Enter Command
+-r "hello.png" tool image_to_text eng "chebahal"
+</pre>
+<p dir="rtl">
+با زدن کد بالا عکس hello.png باز میشود و متن آن توسط برنامه تشخیص داده میشود. بعد از تشخیص متن، متن استخراج شده در فایل chebahal ذخیره میشود.
+</p>
 
 <h3 dir="rtl">قابلیت تشخیص کلمه اشتباه</h3>
 <p dir="rtl">
@@ -76,13 +94,13 @@ python main.py
 <h4 dir="rtl">مثال</h4>
 <pre lang="python">
 >>> Please Enter Command
-"-r photo.png" edit grayscfel negitave balkandwite "Salam_aziz"
+-r "photo.png" edit grayscfel negitave balkandwite "Salam_aziz"
 </pre>
 <p dir="rtl">
 شکل تصحیح شده:
 </p>
 <pre lang="python">
-"-r photo.png" edit grayscale negative blackandwhite "Salam_aziz"
+-r "photo.png" edit grayscale negative blackandwhite "Salam_aziz"
 </pre>
 <p dir="rtl">
 > در این صورت برنامه دستور شما به صورت شکل بالا تصحیح میکند
@@ -95,6 +113,7 @@ python main.py
 
 <h2 dir="rtl">لیست کار ها</h2>
 
+- [x] استخراج متن از عکس
 - [x] ساخت افکت های جدید
 - [x] ساخت قسمت help
 - [ ] چک کردن کامند کاربر و پیشنهاد به او
