@@ -35,10 +35,6 @@ pip install -r requirements.txt
 </pre>
 
 <h2 dir="rtl">تابع های اعمال فیلتر</h2>
-<p dir="rtl">
-در ابتدا باید کتابخانه پیلو را فراخوانی کنید:
-</p>
-<pre lang="python">from PIL import ImageOps, ImageChops</pre>
 
 <h3>Grayscale</h3>
 <pre lang="python">
