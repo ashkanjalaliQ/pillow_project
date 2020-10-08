@@ -55,10 +55,10 @@ while not user_exit:
                 if len(state) == 2:
                     image = state[0]
                     changes = state[1]
-                state = 'main_menu'
+                #state = 'main_menu'
             except:
                 print(Fore.RED, settings.ERROR[2])
-                state = 'main_menu'
+                #state = 'main_menu'
             state = 'export'
 
         elif state == "tool":

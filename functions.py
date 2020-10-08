@@ -36,7 +36,7 @@ def insert_menu(py_file_path, image_address):
     except:
         return 'back'
 
-def export_menu(image, pos, image_address, file_name, response):
+def export_menu(image, pos, image_address, file_name, response='.'):
 
     if file_name == 'back':
         status = 'main_menu'
