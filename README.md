@@ -94,6 +94,12 @@ def blur(image):
     return image.filter(ImageFilter.GaussianBlur(many)).convert('RGB')
 </pre>
 
+<h3 dir="rtl">Smooth</h3>
+<pre lang="python">
+def smooth(image):
+    return image.filter(ImageFilter.SMOOTH_MORE).convert('RGB')
+</pre>
+
 <h2 dir="rtl">طریقه استفاده⚡</h2>
 <pre lang="python">
 python main.py
