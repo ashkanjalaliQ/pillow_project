@@ -40,21 +40,21 @@ pip install -r requirements.txt
 </p>
 <pre lang="python">from PIL import ImageOps, ImageChops</pre>
 
-<h3 dir="rtl">Grayscale</h3>
+<h3>Grayscale</h3>
 <pre lang="python">
 def gray_scale(image):
     image = ImageOps.grayscale(image)
     image = image.convert('RGB')
     return image
 </pre>
-<h3 dir="rtl">Negative</h3>
+<h3>Negative</h3>
 <pre lang="python">
 def negative(image):
     image = ImageChops.invert(image)
     image = image.convert('RGB')
     return image
 </pre>
-<h3 dir="rtl">Black and White</h3>
+<h3>Black and White</h3>
 <pre lang="python">
 def b_and_w(image):
     gray = image.convert('L')
@@ -63,38 +63,38 @@ def b_and_w(image):
     return image
 </pre>
 
-<h3 dir="rtl">Contour</h3>
+<h3>Contour</h3>
 <pre lang="python">
 def contourfilter(image):
     return image.filter(ImageFilter.CONTOUR).convert('RGB')
 </pre>
 
-<h3 dir="rtl">Edgeenhance</h3>
+<h3>Edgeenhance</h3>
 <pre lang="python">
 def edgeenhance(image):
     return image.filter(ImageFilter.EDGE_ENHANCE_MORE).convert('RGB')
 </pre>
 
-<h3 dir="rtl">Emboss</h3>
+<h3>Emboss</h3>
 <pre lang="python">
 def emboss(image):
     return image.filter(ImageFilter.EMBOSS).convert('RGB')
 </pre>
 
-<h3 dir="rtl">Findedges</h3>
+<h3>Findedges</h3>
 <pre lang="python">
 def findedges(image):
     return image.filter(ImageFilter.FIND_EDGES).convert('RGB')
 </pre>
 
-<h3 dir="rtl">Blur</h3>
+<h3>Blur</h3>
 <pre lang="python">
 def blur(image):
     many = 5
     return image.filter(ImageFilter.GaussianBlur(many)).convert('RGB')
 </pre>
 
-<h3 dir="rtl">Smooth</h3>
+<h3>Smooth</h3>
 <pre lang="python">
 def smooth(image):
     return image.filter(ImageFilter.SMOOTH_MORE).convert('RGB')
@@ -126,6 +126,10 @@ python main.py
 </pre>
 <p dir="rtl">
 با زدن کد بالا عکس hello.png باز میشود و متن آن توسط برنامه تشخیص داده میشود. بعد از تشخیص متن، متن استخراج شده در فایل chebahal ذخیره میشود.
+</p>
+<h4 dir="rtl">فایل ذخیره شده:</h4>
+<p align="center">
+  <img src="https://github.com/ashkanjalaliQ/pillow_project/blob/master/image/result.png?raw=true"/>
 </p>
 
 <h3 dir="rtl">قابلیت تشخیص کلمه اشتباه</h3>
