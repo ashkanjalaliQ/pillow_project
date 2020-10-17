@@ -56,9 +56,6 @@ def export_menu(image, pos, image_address, file_name, response='.'):
 
     else:
         image_address += '.txt'
-        '''file = open(image_address, 'w')
-        file.write(response)
-        file.close()'''
 
         with open(image_address, 'w') as text_file:
             text_file.write(response)
