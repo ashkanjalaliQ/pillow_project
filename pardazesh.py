@@ -26,10 +26,11 @@ def check_command():
                     user_exit = False
                 elif len(re.findall('-nr [^,;]+.(png|jpg|jpeg|gif) tool image_to_text (fas|eng) [a-z]*', entry)) != 0:
                     user_exit = False
+        elif entry == '--help':
+            #if entry == '--help':
+            print(settings.HELP)
         else:
-            if entry == '--help':
-                print(settings.HELP)
-
+            print(settings.ERROR[0])
     return user_exit, Processing_sentence(entry)
 
 def recommender(word, options):
