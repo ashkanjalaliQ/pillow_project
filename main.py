@@ -55,23 +55,16 @@ while not user_exit:
                 if len(state) == 2:
                     image = state[0]
                     changes = state[1]
-                #state = 'main_menu'
             except:
                 print(Fore.RED, settings.ERROR[2])
-                #state = 'main_menu'
             state = 'export'
 
         elif state == "tool":
             pytesseract.pytesseract.tesseract_cmd = r'C:\Users\lenovo\AppData\Local\Tesseract-OCR\tesseract'
 
             response = pytesseract.image_to_string(entry[1], lang=entry[4]).strip()
-            '''file = open(entry[-1] + '.txt', 'w')
-            file.write(response)
-            file.close()'''
             state = 'export'
         else:
             sys.exit()
-    #else:
-        #functions.state_error()
 
 print(Fore.WHITE, 'Tamam')
