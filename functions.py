@@ -3,29 +3,31 @@ from effects import color_effect
 from PIL import Image
 from colorama import Fore
 from pardazesh import recommender
+import time
+import cv2
 
 
 def folder_without_file_name(address, split_by):
+
     address = address.split(split_by)[:-1]
+
     add_slash = ''
     for i in range(len(address)):
-        add_slash += address[i] + '//'
-    return add_slash[:-2]
+        add_slash += address[i] + '/'
+    return add_slash[:-1]
 
 def main_menu():
     return settings.MAIN_MENU
 
 def insert_menu(py_file_path, image_address):
-    if len(image_address) != 2:
-        status = 'main_menu'
-        return status
+    #image_address = image_address.split()
     pos = image_address[0]
     image_address = image_address[1]
 
 
     image = Image.open(image_address)
 
-    image_address = folder_without_file_name(image_address, '//')
+    image_address = folder_without_file_name(image_address, '/')
     if pos == '':
         if image_address == py_file_path:
             pos = '-r'
@@ -38,14 +40,11 @@ def insert_menu(py_file_path, image_address):
 
 def export_menu(image, pos, image_address, file_name, response='.'):
 
-    if file_name == 'back':
-        status = 'main_menu'
-        return status
     if pos == '-nr':
-        image_address = folder_without_file_name(image_address, '//')
+        image_address = folder_without_file_name(image_address, '/')
 
     if pos == '-nr':
-        image_address += '//' + file_name
+        image_address += '/' + file_name
     else:
         image_address = file_name
 
@@ -60,6 +59,13 @@ def export_menu(image, pos, image_address, file_name, response='.'):
         with open(image_address, 'w') as text_file:
             text_file.write(response)
 
+def camera(name):
+    camera_port = 0
+    camera = cv2.VideoCapture(camera_port)
+    time.sleep(0.1)
+    return_value, image = camera.read()
+    cv2.imwrite(name + ".png", image)
+    del(camera)
 
 def edit_menu(image, options):
 
