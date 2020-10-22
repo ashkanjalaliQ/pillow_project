@@ -10,15 +10,17 @@ from colorama import Fore
 changes = []
 
 u = open('back_slash.txt')
-u = u.readline()
+u = u.readline()[0]
 
 py_file_path = os.path.abspath(__file__)
-
 py_file_path = functions.folder_without_file_name(py_file_path, u)
 
 
 user_exit, entry = pardazesh.check_command()
-
+if entry[0] == '-o' and entry[1] == 'camera':
+    functions.camera(entry[-1])
+    effects = ' '.join([str(elem) for elem in entry[3:-1]]) 
+    entry = ('-r ' + entry[-1] + '.png ' + entry[2] + ' ' + effects + ' ' + entry[-1]).split()
 state = 'insert'
 
 while not user_exit:
@@ -26,7 +28,7 @@ while not user_exit:
         if state == "main_menu":
             pass
         elif state == "insert":
-            tempo = functions.insert_menu(py_file_path, entry[0:2])
+            tempo = functions.insert_menu(py_file_path, entry[:2])
             if len(tempo) == 1:
                 state = 'main_menu'
             else:
