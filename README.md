@@ -112,6 +112,10 @@ python main.py
 -o camera edit {effect name} "{export name}"
 </pre>
 
+<h4 dir="rtl">نمونه خروجی</h4>
+<p align="center">
+  <img src="https://github.com/ashkanjalaliQ/pillow_project/blob/master/image/Ashkan.jpg?raw=true"/>
+</p>
 
 <h3 dir="rtl">اجرای برنامه تشخیص متن با یک دستور</h3>
 <pre lang="python">
