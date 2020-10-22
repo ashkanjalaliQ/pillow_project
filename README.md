@@ -106,13 +106,31 @@ python main.py
 [-nr/-r] "{image address}" edit {effect name} "{export name}"
 </pre>
 
+<h3 dir="rtl">نمونه ورودی و خروجی</h3>
+<h4 dir="rtl">عکس ورودی</h4>
+<p align="center">
+  <img src="https://github.com/ashkanjalaliQ/pillow_project/blob/master/image/Rainbow-Rose.jpg?raw=true"/>
+</p>
+<pre lang="python">
+>>> Please Enter Command
+-nr "/home/ashkanjalali/Documents/Codes/pillow_project-master/image/Rainbow-Rose.jpg" edit blur "Rainbow-Rose-blur"
+</pre>
+<h4 dir="rtl">عکس خروجی</h4>
+<p align="center">
+  <img src="https://github.com/ashkanjalaliQ/pillow_project/blob/master/image/Rainbow-Rose-blur.jpg?raw=true"/>
+</p>
+
 <h3 dir="rtl">اجرای برنامه افکت با یک دستور(با استفاده از دوربین وبکم)</h3>
 <pre lang="python">
 >>> Please Enter Command
 -o camera edit {effect name} "{export name}"
 </pre>
 
-<h4 dir="rtl">نمونه خروجی</h4>
+<h3 dir="rtl">نمونه ورودی و خروجی</h3>
+<pre lang="python">
+>>> Please Enter Command
+-o camera edit blackandwhite "Ashkan"
+</pre>
 <p align="center">
   <img src="https://github.com/ashkanjalaliQ/pillow_project/blob/master/image/Ashkan.jpg?raw=true"/>
 </p>
