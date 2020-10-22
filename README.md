@@ -100,11 +100,18 @@ def smooth(image):
 <pre lang="python">
 python main.py
 </pre>
-<h3 dir="rtl">اجرای برنامه افکت با یک دستور</h3>
+<h3 dir="rtl">اجرای برنامه افکت با یک دستور(با استفاده از عکس ذخیره شده)</h3>
 <pre lang="python">
 >>> Please Enter Command
-[-nr/-r] "{image address}" edit [grayscale/negative/blackandwhite] "{export name}"
+[-nr/-r] "{image address}" edit {effect name} "{export name}"
 </pre>
+
+<h3 dir="rtl">اجرای برنامه افکت با یک دستور(با استفاده از دوربین وبکم)</h3>
+<pre lang="python">
+>>> Please Enter Command
+-o camera edit {effect name} "{export name}"
+</pre>
+
 
 <h3 dir="rtl">اجرای برنامه تشخیص متن با یک دستور</h3>
 <pre lang="python">
