@@ -1,3 +1,4 @@
+salam
 <h1 dir="rtl">🔥پروژه پیلو</h1>
 <p align="center">
   <img src="https://github.com/ashkanjalaliQ/pillow_project/blob/master/image/pillow.png?raw=true"/>
@@ -186,7 +187,7 @@ python main.py
 --help
 </pre>
 
-<h2 dir="rtl">لیست کار ها</h2>
+<h2 dir="rtl">لیست کار ها </h2>
 
 - [x] استخراج متن از عکس
 - [x] عکس برداری با وبکم
