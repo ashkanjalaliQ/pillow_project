@@ -1,4 +1,3 @@
-salam
 <h1 dir="rtl">🔥پروژه پیلو</h1>
 <p align="center">
   <img src="https://github.com/ashkanjalaliQ/pillow_project/blob/master/image/pillow.png?raw=true"/>
