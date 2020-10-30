@@ -40,6 +40,32 @@ def blur(image):
 def smooth(image):
     return image.filter(ImageFilter.SMOOTH_MORE).convert('RGB')
 
+def halftone(img, sample, scale, angle=45):
+    img_grey = img.convert('L')  
+    channel = img_grey.split()[0]  
+    channel = channel.rotate(angle, expand=1)
+    size = channel.size[0]*scale, channel.size[1]*scale
+
+    bitmap = Image.new('1', size)
+    draw = ImageDraw.Draw(bitmap)
+
+    for x in range(0, channel.size[0], sample):
+        for y in range(0, channel.size[1], sample):
+            box = channel.crop((x, y, x+sample, y+sample))
+            mean = ImageStat.Stat(box).mean[0]
+            diameter = (mean/255) ** 0.5
+            edge = 0.5 * (1-diameter)
+            x_pos, y_pos = (x+edge) * scale, (y+edge) * scale
+            box_edge = sample * diameter * scale
+            draw.ellipse((x_pos, y_pos, x_pos+box_edge, y_pos+box_edge), fill=255)
+
+    bitmap = bitmap.rotate(-angle, expand=1)
+    width_half, height_half = bitmap.size
+    xx = (width_half - img.size[0]*scale) / 2
+    yy = (height_half - img.size[1]*scale) / 2
+    bitmap = bitmap.crop((xx, yy, xx + img.size[0]*scale,
+                                  yy + img.size[1]*scale))
+    return Image.merge('1', [bitmap])
 #import pytesseract
 
 #pytesseract.pytesseract.tesseract_cmd = r'C:\Users\lenovo\AppData\Local\Tesseract-OCR\tesseract'
