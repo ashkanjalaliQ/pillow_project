@@ -2,21 +2,23 @@ import settings
 import functions
 import pardazesh
 import sys
-import pytesseract
+#import pytesseract
 import re
 import os
 from colorama import Fore
 
 changes = []
 
-u = open('back_slash.txt')
-u = u.readline()[0]
+u = "\/"
+u = u[1]
 
 py_file_path = os.path.abspath(__file__)
 py_file_path = functions.folder_without_file_name(py_file_path, u)
 
 
 user_exit, entry = pardazesh.check_command()
+
+
 if entry[0] == '-o' and entry[1] == 'camera':
     functions.camera(entry[-1])
     effects = ' '.join([str(elem) for elem in entry[3:-1]]) 
