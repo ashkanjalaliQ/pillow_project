@@ -20,7 +20,6 @@ def main_menu():
     return settings.MAIN_MENU
 
 def insert_menu(py_file_path, image_address):
-    #image_address = image_address.split()
     pos = image_address[0]
     image_address = image_address[1]
 
@@ -79,6 +78,7 @@ def edit_menu(image, options):
         'findedges',
         'blur',
         'smooth'
+        'halftone'
     ]
 
     effects = [
@@ -90,7 +90,8 @@ def edit_menu(image, options):
         color_effect.emboss,
         color_effect.findedges,
         color_effect.blur,
-        color_effect.smooth
+        color_effect.smooth,
+        color_effect.halftone
     ]
     changes = []
 
