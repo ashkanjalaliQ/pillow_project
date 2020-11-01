@@ -1,0 +1,448 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Form</class>
+ <widget class="QWidget" name="Form">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>485</width>
+    <height>429</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Form</string>
+  </property>
+  <widget class="QLabel" name="Photo">
+   <property name="geometry">
+    <rect>
+     <x>112</x>
+     <y>9</y>
+     <width>225</width>
+     <height>225</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="textFormat">
+    <enum>Qt::AutoText</enum>
+   </property>
+   <property name="pixmap">
+    <pixmap>../../Documents/Codes/pillow_project/image/Rainbow-Rose.jpg</pixmap>
+   </property>
+   <property name="scaledContents">
+    <bool>true</bool>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignCenter</set>
+   </property>
+   <property name="wordWrap">
+    <bool>false</bool>
+   </property>
+   <property name="indent">
+    <number>-1</number>
+   </property>
+   <property name="openExternalLinks">
+    <bool>false</bool>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="Sr">
+   <property name="geometry">
+    <rect>
+     <x>385</x>
+     <y>271</y>
+     <width>31</width>
+     <height>25</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>-r</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label">
+   <property name="geometry">
+    <rect>
+     <x>26</x>
+     <y>240</y>
+     <width>55</width>
+     <height>17</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Address</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="back">
+   <property name="geometry">
+    <rect>
+     <x>360</x>
+     <y>390</y>
+     <width>80</width>
+     <height>25</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>back</string>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="Ainput">
+   <property name="geometry">
+    <rect>
+     <x>87</x>
+     <y>240</y>
+     <width>211</width>
+     <height>25</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_5">
+   <property name="geometry">
+    <rect>
+     <x>27</x>
+     <y>360</y>
+     <width>16</width>
+     <height>17</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>B</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_4">
+   <property name="geometry">
+    <rect>
+     <x>27</x>
+     <y>329</y>
+     <width>16</width>
+     <height>17</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>G</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="home">
+   <property name="geometry">
+    <rect>
+     <x>274</x>
+     <y>390</y>
+     <width>80</width>
+     <height>25</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Home</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="help">
+   <property name="geometry">
+    <rect>
+     <x>188</x>
+     <y>390</y>
+     <width>80</width>
+     <height>25</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>?</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="Am">
+   <property name="geometry">
+    <rect>
+     <x>319</x>
+     <y>240</y>
+     <width>51</width>
+     <height>25</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>-m</string>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="Sinput">
+   <property name="geometry">
+    <rect>
+     <x>87</x>
+     <y>271</y>
+     <width>211</width>
+     <height>25</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="Sm">
+   <property name="geometry">
+    <rect>
+     <x>320</x>
+     <y>270</y>
+     <width>51</width>
+     <height>25</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>-m r</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="Ar">
+   <property name="geometry">
+    <rect>
+     <x>385</x>
+     <y>240</y>
+     <width>31</width>
+     <height>25</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>-r</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_2">
+   <property name="geometry">
+    <rect>
+     <x>26</x>
+     <y>271</y>
+     <width>50</width>
+     <height>17</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Save to</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="save">
+   <property name="geometry">
+    <rect>
+     <x>26</x>
+     <y>395</y>
+     <width>80</width>
+     <height>25</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Save</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_3">
+   <property name="geometry">
+    <rect>
+     <x>27</x>
+     <y>298</y>
+     <width>16</width>
+     <height>17</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>R</string>
+   </property>
+  </widget>
+  <widget class="QSlider" name="Bslide">
+   <property name="geometry">
+    <rect>
+     <x>44</x>
+     <y>365</y>
+     <width>141</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="maximum">
+    <number>255</number>
+   </property>
+   <property name="orientation">
+    <enum>Qt::Horizontal</enum>
+   </property>
+  </widget>
+  <widget class="QSlider" name="Gslide">
+   <property name="geometry">
+    <rect>
+     <x>44</x>
+     <y>334</y>
+     <width>141</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="maximum">
+    <number>255</number>
+   </property>
+   <property name="orientation">
+    <enum>Qt::Horizontal</enum>
+   </property>
+  </widget>
+  <widget class="QSlider" name="Rslide">
+   <property name="geometry">
+    <rect>
+     <x>44</x>
+     <y>303</y>
+     <width>141</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="maximum">
+    <number>255</number>
+   </property>
+   <property name="orientation">
+    <enum>Qt::Horizontal</enum>
+   </property>
+  </widget>
+  <widget class="QSpinBox" name="Rspin">
+   <property name="geometry">
+    <rect>
+     <x>210</x>
+     <y>300</y>
+     <width>48</width>
+     <height>26</height>
+    </rect>
+   </property>
+   <property name="maximum">
+    <number>255</number>
+   </property>
+  </widget>
+  <widget class="QSpinBox" name="Gspin">
+   <property name="geometry">
+    <rect>
+     <x>210</x>
+     <y>330</y>
+     <width>48</width>
+     <height>26</height>
+    </rect>
+   </property>
+   <property name="maximum">
+    <number>255</number>
+   </property>
+  </widget>
+  <widget class="QSpinBox" name="Bspin">
+   <property name="geometry">
+    <rect>
+     <x>210</x>
+     <y>360</y>
+     <width>48</width>
+     <height>26</height>
+    </rect>
+   </property>
+   <property name="maximum">
+    <number>255</number>
+   </property>
+  </widget>
+  <zorder>Rslide</zorder>
+  <zorder>Photo</zorder>
+  <zorder>Sr</zorder>
+  <zorder>label</zorder>
+  <zorder>back</zorder>
+  <zorder>Ainput</zorder>
+  <zorder>label_5</zorder>
+  <zorder>label_4</zorder>
+  <zorder>home</zorder>
+  <zorder>help</zorder>
+  <zorder>Am</zorder>
+  <zorder>Sinput</zorder>
+  <zorder>Sm</zorder>
+  <zorder>Ar</zorder>
+  <zorder>label_2</zorder>
+  <zorder>save</zorder>
+  <zorder>label_3</zorder>
+  <zorder>Bslide</zorder>
+  <zorder>Gslide</zorder>
+  <zorder>Rspin</zorder>
+  <zorder>Gspin</zorder>
+  <zorder>Bspin</zorder>
+ </widget>
+ <resources/>
+ <connections>
+  <connection>
+   <sender>Rslide</sender>
+   <signal>sliderMoved(int)</signal>
+   <receiver>Rspin</receiver>
+   <slot>setValue(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>87</x>
+     <y>310</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>239</x>
+     <y>316</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>Rspin</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>Rslide</receiver>
+   <slot>setValue(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>227</x>
+     <y>303</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>140</x>
+     <y>304</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>Gslide</sender>
+   <signal>sliderMoved(int)</signal>
+   <receiver>Gspin</receiver>
+   <slot>setValue(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>129</x>
+     <y>338</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>232</x>
+     <y>346</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>Bslide</sender>
+   <signal>sliderMoved(int)</signal>
+   <receiver>Bspin</receiver>
+   <slot>setValue(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>117</x>
+     <y>372</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>233</x>
+     <y>374</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>Gspin</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>Gslide</receiver>
+   <slot>setValue(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>225</x>
+     <y>339</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>155</x>
+     <y>341</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>Bspin</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>Bslide</receiver>
+   <slot>setValue(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>223</x>
+     <y>371</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>135</x>
+     <y>373</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+</ui>
