@@ -144,7 +144,7 @@ python main.py
 </p>
 <pre lang="python">
 >>> Please Enter Command
--nr "/home/ashkanjalali/Documents/Codes/pillow_project-master/image/Rainbow-Rose.jpg" edit blur "Rainbow-Rose-blur"
+-r "Rainbow-Rose.jpg" edit blur "Rainbow-Rose-blur"
 </pre>
 <h4 dir="rtl">عکس خروجی</h4>
 <p align="center">
